@@ -16,10 +16,10 @@ int main()
 
 	//Decode From Base64
 	char* base64DecodeOutput;
-	size_t test;
+	size_t decode_output_length;
 	const char *base64Encode_str = "aHR0cDovL3ZlcnlpdG1hbi5jb20=";
-	mzc_base64_decode(base64Encode_str, &base64DecodeOutput, &test);
-	printf("Base64 decode output: %s %d\n", base64DecodeOutput, test);
+	mzc_base64_decode(base64Encode_str, &base64DecodeOutput, &decode_output_length);
+	printf("Base64 decode output: %s, length:%d\n", base64DecodeOutput, decode_output_length);
 
 	return 0;
 }
