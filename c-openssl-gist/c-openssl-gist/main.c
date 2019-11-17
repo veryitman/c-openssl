@@ -5,12 +5,11 @@
 
 int main()
 {
-	//Encode To Base64
-	char *base64EncodeOutput;
-
 	//Take the web's url of my blog as example:http://veryitman.com
 	char *text = "http:\/\/veryitman.com";
 
+	//Encode To Base64
+	char *base64EncodeOutput;
 	mzc_base64_encode(text, strlen(text), &base64EncodeOutput);
 	printf("Base64 encode output: %s\n", base64EncodeOutput);
 
