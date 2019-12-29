@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -148,9 +148,11 @@
   <ItemGroup>
     <ClCompile Include="main.c" />
     <ClCompile Include="mzc_base64.c" />
+    <ClCompile Include="mzc_rsa.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mzc_base64.h" />
+    <ClInclude Include="mzc_rsa.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
