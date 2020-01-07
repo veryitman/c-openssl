@@ -41,6 +41,12 @@ RSA *createRSA(unsigned char *key, int public_token)
 int public_key_decrypt(unsigned char *enc_data, int data_len, unsigned char *key, unsigned char *decrypted)
 {
 	RSA *rsa = createRSA(key, 1);
+	if (NULL == rsa)
+	{
+		return -1;
+	}
+	int res = RSA_size(rsa);
+	printf("The public key decrypt rsa_szie: %i\n\n", res);
 	int result = RSA_public_decrypt(data_len, enc_data, decrypted, rsa, PADDING);
 	return result;
 }
@@ -48,6 +54,12 @@ int public_key_decrypt(unsigned char *enc_data, int data_len, unsigned char *key
 int private_key_encrypt(unsigned char *data, int data_len, unsigned char *key, unsigned char *encrypted)
 {
 	RSA *rsa = createRSA(key, 0);
+	if (NULL == rsa)
+	{
+		return -1;
+	}
+	int res = RSA_size(rsa);
+	printf("The private key encrypt rsa_szie: %i\n\n", res);
 	int result = RSA_private_encrypt(data_len, data, encrypted, rsa, PADDING);
 	return result;
 }
@@ -55,6 +67,12 @@ int private_key_encrypt(unsigned char *data, int data_len, unsigned char *key, u
 int public_key_encrypt(unsigned char *data, int data_len, unsigned char *key, unsigned char *encrypted)
 {
 	RSA *rsa = createRSA(key, 1);
+	if (NULL == rsa)
+	{
+		return -1;
+	}
+	int res = RSA_size(rsa);
+	printf("The public key encrypt rsa_szie: %i\n\n", res);
 	int result = RSA_public_encrypt(data_len, data, encrypted, rsa, PADDING);
 	return result;
 }
@@ -62,6 +80,12 @@ int public_key_encrypt(unsigned char *data, int data_len, unsigned char *key, un
 int private_key_decrypt(unsigned char *enc_data, int data_len, unsigned char *key, unsigned char *decrypted)
 {
 	RSA *rsa = createRSA(key, 0);
+	if (NULL == rsa)
+	{
+		return -1;
+	}
+	int res = RSA_size(rsa);
+	printf("The private key decrypt rsa_szie: %i\n\n", res);
 	int result = RSA_private_decrypt(data_len, enc_data, decrypted, rsa, PADDING);
 	return result;
 }
